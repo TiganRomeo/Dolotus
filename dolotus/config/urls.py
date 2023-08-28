@@ -5,5 +5,5 @@ from apps.core.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
-    path('apps/users/', include('apps.users.urls')),
+    path('', include('apps.users.urls')),
 ]
