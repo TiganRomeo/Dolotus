@@ -1,8 +1,303 @@
-<nav>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/products/">Products</a></li>
-        <li><a href="/cart/">Cart</a></li>
-        <!-- Add more navigation links as needed -->
-    </ul>
-</nav>
+{% load static %}
+
+<head>
+
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    {% endblock %}
+</head>
+
+<!-- search area start -->
+<div class="search-area">
+    <div class="search-inner p-relative">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="search-wrapper">
+                        <div class="search-close">
+                            <button class="search-close-btn">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M1 1L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="search-content pt-35">
+                            <h3 class="heading text-center mb-30">Hi! How can we help You?</h3>
+                            <div class="d-flex justify-content-center px-5">
+                                <div class="search w-100 p-relative">
+                                <input type="text" class="search-input" placeholder="Search...">
+                                    <button  class="search-icon">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="search-overlay"></div>
+<!-- search area end -->
+
+<!-- offcanvas area start -->
+<div class="offcanvas__area">
+    <div class="offcanvas__wrapper">
+       <div class="offcanvas__close">
+          <button class="offcanvas__close-btn offcanvas-close-btn">
+             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M1 1L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+             </svg>
+          </button>
+       </div>
+       <div class="offcanvas__content">
+          <div class="offcanvas__top mb-50 d-flex justify-content-between align-items-center">
+             <div class="offcanvas__logo logo">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'img/logo/dolotus_logo.png' %}" alt="Corporeit">
+                </a>
+             </div>
+          </div>
+          <div class="main-menu-mobile fix d-xl-none mb-40"></div>
+          
+          <div class="offcanvas__contact">
+             <h4 class="offcanvas__title">Contacts</h4>
+             <div class="offcanvas__contact-content d-flex">
+                <div class="offcanvas__contact-content-icon">
+                   <i class="fa-sharp fa-solid fa-location-dot"></i>
+                </div>
+                <div class="offcanvas__contact-content-content">
+                   <a href="https://www.google.com/maps/search/86+Road+Broklyn+Street,+600+New+York,+USA/@40.6897806,-74.0278086,12z/data=!3m1!4b1">86 Road Broklyn Street, 600 </a>
+                </div>
+             </div>
+             <div class="offcanvas__contact-content d-flex">
+                <div class="offcanvas__contact-content-icon">
+                   <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="offcanvas__contact-content-content">
+                   <a href="/cdn-cgi/l/email-protection#9cf2f9f9f8f4f9f0ecdcfff3f1ecfdf2e5b2fff3f1"> <span class="__cf_email__" data-cfemail="a3edc6c6c7cbc6cfd3e3c0ccced3c2cdda8dc0ccce">[email&#160;protected]</span>  </a>
+                </div>
+             </div>
+             <div class="offcanvas__contact-content d-flex">
+                <div class="offcanvas__contact-content-icon">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+                <div class="offcanvas__contact-content-content">
+                   <a href="tel:01310-069824"> +92 666 888 0000</a>
+                </div>
+             </div>
+          </div>
+          <div class="offcanvas__social">
+             <a class="icon facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+             <a class="icon twitter" href="#"><i class="fab fa-twitter"></i></a>
+             <a class="icon youtube" href="#"><i class="fab fa-youtube"></i></a>
+             <a class="icon linkedin" href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+       </div>
+    </div>
+ </div>
+ <div class="body-overlay"></div>
+ <!-- offcanvas area end -->
+
+
+<!-- header area start -->
+<header class="header-area p-relative">
+    <div class="header-box p-relative">
+        <div class="header-logo p-relative">
+            <span class="header-logo-bg"></span>
+            <a href="{% url 'home' %}">
+                <img src="{% static 'img/logo/dolotus_logo.png' %}" alt="">
+            </a>
+        </div>
+
+        <div class="header-wrapper-inner header__sticky p-relative">
+            <div class="header-top d-none d-xl-flex">
+                <div class="header-top-info">
+                    <a href="https://www.google.com/maps/search/6391+Elgin+St,+Wilmington,+DE,+USA/@39.7298967,-75.5645038,13z/data=!3m1!4b1" target="_blank"><span><i class="fa-sharp fa-solid fa-location-dot"></i></span>6391 Elgin St. Celina, 10299</a>
+                </div>
+                <div class="header-top-right d-flex justify-content-end align-items-center">
+                    <div class="header-social ">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-main-menu d-flex align-items-center justify-content-between">
+                <div class="main-menu d-none d-xl-block">
+                    <nav class="main-menu-content">
+                        <ul>
+
+                            <li class="has-dropdown">
+                                <a href="">Living</a>
+                                <ul class="submenu">
+                                    <li><a href="">FAQ</a></li>
+                                    <li><a href="">Our Team</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-dropdown">
+                                <a href="">Bedroom</a>
+                                <ul class="submenu">
+                                    <li><a href="">Funding</a></li>
+                                    <li><a href="">Loan Calculator</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-dropdown">
+                                <a href="">Kitchen</a>
+                                <ul class="submenu">
+                                    <li><a href="">Funding</a></li>
+                                    <li><a href="">Loan Calculator</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-dropdown">
+                                <a href="">Bathroom</a>
+                                <ul class="submenu">
+                                    <li><a href="">Funding</a></li>
+                                    <li><a href="">Loan Calculator</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-dropdown">
+                                <a href="">Office</a>
+                                <ul class="submenu">
+                                    <li><a href="">Funding</a></li>
+                                    <li><a href="">Loan Calculator</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-dropdown">
+                                <a href="">Hall</a>
+                                <ul class="submenu">
+                                    <li><a href="">Funding</a></li>
+                                    <li><a href="">Loan Calculator</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-dropdown">
+                                <a href="">HoReCa</a>
+                                <ul class="submenu">
+                                    <li><a href="">Funding</a></li>
+                                    <li><a href="">Loan Calculator</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-dropdown">
+                                <a href="">SALE</a>
+                                <ul class="submenu">
+                                    <li><a href="">Funding</a></li>
+                                    <li><a href="">Loan Calculator</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                 
+                <div class="header-main-right d-flex align-items-center justify-content-xl-end">
+                    <div class="header-contact d-xl-flex align-items-center d-none">
+                        <div class="header-contact-search search-open-btn d-none d-xxl-block">
+                            <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                        </div>
+
+                        <div class="header-contact-search d-none d-xxl-block">
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+                        </div>
+
+                       <div class="header-contact-inner d-flex align-items-center">
+                            <div class="header-contact-icon">
+                                <span><i class="fa-regular fa-user"></i></span>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="header-sticky-hamburger d-xl-none offcanvas-open-btn">
+                       <button class="hamburger-btn">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                       </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header area end -->
+
+     <!-- sticky header start -->
+     <header id="header-sticky" class="header-main-sticky p-relative">
+        <div class="header-space-2">
+           <div class="container-fluid">
+              <div class="row align-items-center">
+                 <div class="col-xl-3 col-6 sticky-bg-logo">
+                    <div class="header-logo-2 p-relative">
+                       <a href="">
+                        <img src="{% static 'images/homepage/corporeit-logo.webp' %}" alt="">
+                       </a>
+                    </div>
+                 </div>
+                 <div class="col-lg-6 d-none d-xl-block">
+                    <div class="main-menu home-2 d-none d-xl-block">
+                       <nav class="main-menu-content">
+                        <ul>
+                            <li>
+                                <a href="">Home</a>
+                            </li>
+
+                            <li class="has-dropdown">
+                                <a href="">About Us</a>
+                                <ul class="submenu">
+                                    <li><a href="">FAQ</a></li>
+                                    <li><a href="">Our Team</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-dropdown">
+                                <a href="">Services</a>
+                                <ul class="submenu">
+                                    <li><a href="">Funding</a></li>
+                                    <li><a href="">Loan Calculator</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="">News</a></li>
+                            </li>
+
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                       </nav>
+                    </div>
+                 </div>
+                 <div class="col-xl-3 col-6">
+                    <div class="header-main-right-2 d-flex align-items-center justify-content-xl-end">
+                       <div class="header-contact-2 d-flex align-items-center">
+                          <div class="header-contact-search search-open-btn d-none d-xxl-block">
+                             <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                          </div>
+                          <div class="header-contact-inner d-none d-xl-flex align-items-center">
+                             <div class="header-contact-icon">
+                                <span><i class="fa-regular fa-user"></i></span>
+                             </div>
+                             <div class="header-contact-content"></div>
+                          </div>
+                       </div>
+                       <div class="header-main-right-hamburger-btn d-xl-none offcanvas-open-btn text-end">
+                          <button class="hamburger-btn">
+                             <span></span>
+                             <span></span>  
+                             <span></span>
+                          </button>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </header>
+     <!-- sticky header end -->

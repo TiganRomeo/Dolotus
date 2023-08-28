@@ -1,25 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Website{% endblock %}</title>
-    <!-- Include your CSS and JavaScript links here -->
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        {% include 'base/header.html' %}
-    </header>
+{% load static %}
 
-    <!-- Content -->
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>{% block title %}Închirieri buldoexcavator în județul Bihor{% endblock %}</title>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Oferim servicii profesionale de închirieri buldoexcavatoare în județul Bihor. Flota noastră modernă de buldoexcavatoare este disponibilă pentru proiectele dvs. de construcții și excavări.">
+    <meta name="keywords" content="închirieri buldoexcavatoare, buldoexcavatoare de închiriat, construcții și excavări, echipamente pentru construcții, județul Bihor, prețuri competitive, soluții personalizate">
+    <meta name="language" content="Romana">
+    <meta name="author" content="Sarmaiogemar S.R.L.">
+
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="SARMAIOGEMAR | Închirieri buldoexcavator în județul Bihor">
+    <meta property="og:description" content="Oferim servicii profesionale de închirieri buldoexcavatoare în județul Bihor. Flota noastră modernă de buldoexcavatoare este disponibilă pentru proiectele dvs. de construcții și excavări. Contactați-ne pentru prețuri competitive și soluții personalizate">
+    <meta property="og:image" content="https://sarmaiogemar.ro/static/images/">
+    <meta property="og:url" content="https://sarmaiogemar.ro">
+
+    <meta property="og:title" content="URL-website-inchirieri-buldoexcavator">
+    <meta name="twitter:description" content="Oferim servicii profesionale de închirieri buldoexcavatoare în județul Bihor. Flota noastră modernă de buldoexcavatoare este disponibilă pentru proiectele dvs. de construcții și excavări. Contactați-ne pentru prețuri competitive și soluții personalizate.">
+    <meta name="twitter:url" content="https://sarmaiogemar.ro/static/images/">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="icon" href="{% static 'images/' %}">
+    <link rel="canonical" href="https://sarmaiogemar.ro">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> 
+    <script src="https://kit.fontawesome.com/6c636db411.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'css/sys/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sys/swiper-bundle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sys/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sys/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sys/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sys/spacing.css' %}">
+
+    {% block styles %}
+    {% endblock %}
+</head>
+
+<body>
+    {% include 'base/header.html' %}
+
     <main>
-        {% block content %}{% endblock %}
+        {% block content %}
+        
+        {% endblock %}
     </main>
 
-    <!-- Footer -->
-    <footer>
-        {% include 'base/footer.html' %}
-    </footer>
+    {% include 'base/footer.html' %}
+
+
+    <script src="{% static 'js/meanmenu.js' %}"></script>
+    <script src="{% static 'js/magnific-popup.js' %}"></script>
+    <script src="{% static 'js/ajax-form.js' %}"></script>
+    <script src="{% static 'js/countdown.js' %}"></script>
+    <script src="{% static 'js/email-decode.min.js' %}"></script>
+    <script src="{% static 'js/isotope-pkgd.js' %}"></script>
+    <script src="{% static 'js/purecounter.js' %}"></script>
+    <script src="{% static 'js/slick.js' %}"></script>
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/imagesloaded-pkgd.js' %}"></script>
+    <script src="{% static 'js/swiper-bundle.js' %}"></script>
+    <script src="{% static 'js/nice-select.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
 </body>
+
 </html>
