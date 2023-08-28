@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Website{% endblock %}</title>
+    <!-- Include your CSS and JavaScript links here -->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        {% include 'base/header.html' %}
+    </header>
+
+    <!-- Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        {% include 'base/footer.html' %}
+    </footer>
+</body>
+</html>
