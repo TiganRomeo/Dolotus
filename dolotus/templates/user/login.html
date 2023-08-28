@@ -1,12 +1,10 @@
 {% extends 'base/base.html' %}
 
-{% block title %}Welcome to Our Home Decor Store{% endblock %}
-
 {% block content %}
-<section class="hero">
-    <h1>Welcome to Our Home Decor Store</h1>
-    <p>Discover a world of beautiful home decor items.</p>
-    <a href="">Shop Now</a>
-</section>
-<!-- Add more content as needed -->
+  <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
 {% endblock %}

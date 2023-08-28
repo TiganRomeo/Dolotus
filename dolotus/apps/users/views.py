@@ -12,7 +12,7 @@ def register(request):
             return redirect('home')  # Redirect to the homepage after registration
     else:
         form = CustomUserCreationForm()
-    return render(request, 'registration/register.html', {'form': form})
+    return render(request, 'user/register.html', {'form': form})
 
 def user_login(request):
     if request.method == 'POST':
@@ -22,7 +22,7 @@ def user_login(request):
         if user is not None:
             login(request, user)
             return redirect('home')  # Redirect to the homepage after login
-    return render(request, 'registration/login.html')
+    return render(request, 'user/login.html')
 
 @login_required
 def user_profile(request):
@@ -33,4 +33,4 @@ def user_profile(request):
             return redirect('user_profile')
     else:
         form = CustomUserCreationForm(instance=request.user)
-    return render(request, 'registration/user_profile.html', {'form': form})
+    return render(request, 'user/profile.html', {'form': form})
