@@ -1,8 +1,10 @@
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth import login
 from django.shortcuts import render, redirect
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, EmailAuthenticationForm
+from django.urls import reverse_lazy
 
-def user_register(request):
+def register(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
@@ -13,16 +15,9 @@ def user_register(request):
         form = CustomUserCreationForm()
     return render(request, 'user/register.html', {'form': form})
 
-def user_login(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('home')  # Redirect to the homepage after login
-    return render(request, 'user/login.html')
+class CustomLoginView(LoginView):
+    template_name = 'user/login.html'
+    authentication_form = EmailAuthenticationForm
 
-def user_logout(request):
-    logout(request)
-    return redirect('home')  # Redirect to the homepage after logout
+class CustomLogoutView(LogoutView):
+    next_page = reverse_lazy('login')
