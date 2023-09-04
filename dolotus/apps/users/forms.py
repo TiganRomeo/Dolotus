@@ -1,13 +1,10 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm
+from .models import CustomUser
 
 class CustomUserCreationForm(UserCreationForm):
+    email = forms.EmailField(max_length=254, required=True, help_text='Required. Enter a valid email address.')
+
     class Meta:
         model = CustomUser
-        fields = ('username', 'email', 'password1', 'password2', 'phone_number', 'address', 'first_name', 'last_name', 'country')
-
-class EmailAuthenticationForm(AuthenticationForm):
-    username = forms.EmailField(
-        max_length=254,
-        widget=forms.TextInput(attrs={'autofocus': True}),
-    )
+        fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2')
