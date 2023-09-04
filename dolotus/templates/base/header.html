@@ -249,15 +249,9 @@
                         </div>
 
                         <div class="header-contact-inner d-flex align-items-center">
-                            {% if user.is_authenticated %}
-                                <div class="header-contact-icon">
-                                    <span><i class="fa-regular fa-user"></i></span>
-                                </div>
-                            {% else %}
-                                <div class="header-contact-icon">
-                                    <a href="{% url 'users:login' %}"><span><i class="fa-regular fa-user"></i> Login</span></a>
-                                </div>
-                            {% endif %}
+                            <div class="header-contact-icon">
+                                <a href="{% url 'register' %}"><span><i class="fa-regular fa-user"></i></span></a>
+                            </div>
                         </div>
                         
                     </div>
